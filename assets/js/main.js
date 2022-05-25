@@ -56,12 +56,10 @@ sr.reveal('.home__social-icon',{ interval: 200});
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
 /*CHARTS*/
-var ctx = document.getElementById('myChart').getContext('2d');
-var race = document.getElementById('race').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['2009_2010', '2010_2011', '2011_2012', '2012_2013', '2013_2014', '2014_2015', '2015_2016','2016_2017','2017_2018'],
+
+/*--setup--*/
+const data ={
+    labels: ['2009_2010', '2010_2011', '2011_2012', '2012_2013', '2013_2014', '2014_2015', '2015_2016','2016_2017','2017_2018'],
         datasets: [{
             label: 'Total Homelessness Decisions',
             data: [542.476, 619.613, 661.954, 687.32, 680.531, 684.939,699.823,704.823,704.823,667.137],
@@ -90,94 +88,25 @@ var myChart = new Chart(ctx, {
             ],
             borderWidth: 1
         }]
-    },
+};
+
+/*--config--*/
+
+const config ={
+  type: 'bar',
+  data,
     options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
+       responsive: true,
     }
-});
+};
+/*--render--*/
+const myChart = new Chart(
+    document.getElementById('myChart'),
+config
+);
 
-var myChart = new Chart(race, {
-    type: 'pie',
-    data: {
-        labels: ['2009_2010', '2010_2011', '2011_2012', '2012_2013', '2013_2014', '2014_2015', '2015_2016','2016_2017','2017_2018'],
-        datasets: [{
-            label: 'White',
-            data: [164.735, 178.168, 202.095, 209.378, 199.756, 203.25,204.899,215.055,215.055,209.552],
-            backgroundColor: [
-                'rgba(143, 222, 103, 0.7)',
-                'rgba(5, 26, 34, 0.8)',
-                'rgba(232, 44, 105, 0.9)',
-                'rgba(41, 180, 114, 0.7)',
-                'rgba(61, 68, 57, 0.3)',
-                'rgba(117, 216, 220, 1))',
-                'rgba(15, 210, 249, 0.5)',
-               ' rgba(225, 200, 68, 0.5)',
-                'rgba(208, 10, 126, 0.9)'
-
-            ],
-            label: 'Asian or Asian British ',
-            data: [15.6738, 16.8049, 20.622, 25.3872, 26.9085, 29.3659,32.6524,33.1463,33.1463,31.6555],
-            backgroundColor: [
-                'rgba(143, 222, 103, 0.7)',
-                'rgba(5, 26, 34, 0.8)',
-                'rgba(232, 44, 105, 0.9)',
-                'rgba(41, 180, 114, 0.7)',
-                'rgba(61, 68, 57, 0.3)',
-                'rgba(117, 216, 220, 1))',
-                'rgba(15, 210, 249, 0.5)',
-               ' rgba(225, 200, 68, 0.5)',
-                'rgba(208, 10, 126, 0.9)'
-
-            ],
-            label: 'Mixed',
-            data: [6.97561,8.01829,9.90854,10.4665, 9.5061,10.2256,11.375, 11.1555,11.1555 ,11.8201 ],
-            backgroundColor: [
-                'rgba(143, 222, 103, 0.7)',
-                'rgba(5, 26, 34, 0.8)',
-                'rgba(232, 44, 105, 0.9)',
-                'rgba(41, 180, 114, 0.7)',
-                'rgba(61, 68, 57, 0.3)',
-                'rgba(117, 216, 220, 1))',
-                'rgba(15, 210, 249, 0.5)',
-               ' rgba(225, 200, 68, 0.5)',
-                'rgba(208, 10, 126, 0.9)'
-
-            ],
-            label: 'Other Ethnic Origin',
-            data: [9.3628,11.3171,13.311,13.2317,12.6982,14.0061,16.372,16.7988,16.7988,14.2256],
-            backgroundColor: [
-                'rgba(143, 222, 103, 0.7)',
-                'rgba(5, 26, 34, 0.8)',
-                'rgba(232, 44, 105, 0.9)',
-                'rgba(41, 180, 114, 0.7)',
-                'rgba(61, 68, 57, 0.3)',
-                'rgba(117, 216, 220, 1))',
-                'rgba(15, 210, 249, 0.5)',
-               ' rgba(225, 200, 68, 0.5)',
-                'rgba(208, 10, 126, 0.9)'
-
-            ],
-            label: 'Ethic Group not Stated',
-            data: [11.1829,13.5701,14.6311,16.7713,17.4878,19.8262,22.1616,20.7287,20.7287,21.561],
-            backgroundColor: [
-                'rgba(143, 222, 103, 0.7)',
-                'rgba(5, 26, 34, 0.8)',
-                'rgba(232, 44, 105, 0.9)',
-                'rgba(41, 180, 114, 0.7)',
-                'rgba(61, 68, 57, 0.3)',
-                'rgba(117, 216, 220, 1))',
-                'rgba(15, 210, 249, 0.5)',
-               ' rgba(225, 200, 68, 0.5)',
-                'rgba(208, 10, 126, 0.9)'
-
-            ],
-        }]
-    },
-    options: {
-        responsive:true,
-    }
-});
+/*---render piechart---*/
+const race = new Chart(
+    document.getElementById('race'),
+config
+);
