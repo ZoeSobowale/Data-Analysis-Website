@@ -253,13 +253,14 @@ img {
 
 /* ===== TOTAL =====*/
 .total__container {
-  row-gap: 1rem;
+  row-gap: 2rem;
   text-align: center;
 }
 
 .total__text {
   margin-bottom: var(--mb-4);
 }
+
 .total__chart {
   position: relative;
   width: 100%;
@@ -271,9 +272,11 @@ img {
   row-gap: 2rem;
   text-align: center;
 }
+
 .race__text {
   margin-bottom: var(--mb-4);
 }
+
 .race__chart {
   position: relative;
   width: 100%;
