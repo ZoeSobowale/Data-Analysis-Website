@@ -90,59 +90,61 @@ const data ={
         }]
 };
 
+
 const data2 = {
-    labels: labels,
+    labels: ['2009_2010', '2010_2011', '2011_2012', '2012_2013', '2013_2014', '2014_2015', '2015_2016','2016_2017','2017_2018', '2018_2019'],
     datasets: [
       {
         label: 'White',
         data: [164.735, 178.168, 202.095, 209.378, 199.756, 203.25,204.899,215.055,215.055,209.552],
-        borderColor: rgba(245, 56, 39, 0.8),
-        backgroundColor: Utils.transparentize(rgba(255, 124, 112, 0.8)),
+        borderColor: ['rgba(245, 56, 39, 0.8)'],
+        backgroundColor: ['Utils.transparentize(rgba(255, 124, 112, 0.8))'],
+        fill: false
       },
       {
         label: 'Asian or Asian British',
         data: [15.6738, 16.8049, 20.622, 25.3872, 26.9085, 29.3659,32.6524,33.1463,33.1463,31.6555],
-        borderColor: rgba(253, 127, 9, 0.8),
-        backgroundColor: Utils.transparentize(rgba(255, 185, 120, 0.8)),
+        borderColor: ['rgba(253, 127, 9, 0.8)'],
+        backgroundColor: ['Utils.transparentize(rgba(255, 185, 120, 0.8))'],
       },
       {
         label: 'Mixed',
         data: [6.97561,8.01829,9.90854,10.4665, 9.5061,10.2256,11.375, 11.1555,11.1555 ,11.8201 ],
-        borderColor: rgba(251, 246, 0, 0.8),
-        backgroundColor: Utils.transparentize(rgba(255, 252, 108, 0.8)),
+        borderColor: ['rgba(251, 246, 0, 0.8)'],
+        backgroundColor: ['Utils.transparentize(rgba(255, 252, 108, 0.8))'],
       },
       {
         label: 'Other Ethnic Origin',
         data: [9.3628,11.3171,13.311,13.2317,12.6982,14.0061,16.372,16.7988,16.7988,14.2256],
-        borderColor: rgba(121, 253, 0, 0.8),
-        backgroundColor: Utils.transparentize(rgba(197, 255, 143, 0.8)),
+        borderColor: ['rgba(121, 253, 0, 0.8)'],
+        backgroundColor: ['Utils.transparentize(rgba(197, 255, 143, 0.8))'],
       },
       {
         label: 'Ethic Group not Stated',
         data: [11.1829,13.5701,14.6311,16.7713,17.4878,19.8262,22.1616,20.7287,20.7287,21.561],       
-        borderColor: rgba(26, 159, 255, 0.8),
-        backgroundColor: Utils.transparentize(rgba(157, 214, 255, 0.8)),
+        borderColor: ['rgba(26, 159, 255, 0.8)'],
+        backgroundColor: ['Utils.transparentize(rgba(157, 214, 255, 0.8))'],
       },
     ]
   };
 
 /*--config--*/
 
-const config ={
+const config = {
   type: 'bar',
-  data,
+  data: data,
     options: {
        responsive: true,
     }
 };
 
 const config2 = {
-    type: 'line',
-    data2,
+  type: 'line',
+  data: data2,
     options: {
-      responsive: true,
-    },
-  };
+       responsive: true,
+    }
+ };
 
 /*--render--*/
 const myChart = new Chart(
@@ -150,8 +152,8 @@ const myChart = new Chart(
 config
 );
 
-/*---render linehart---*/
-const myChart2 = new Chart(
-    document.getElementById('myChart2'),
+/*---render linechart---*/
+const race_ch = new Chart(
+    document.getElementById('race_ch'),
 config2
 );
