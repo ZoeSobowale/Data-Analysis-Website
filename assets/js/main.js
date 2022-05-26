@@ -151,7 +151,7 @@ config
 );
 
 /*---render linehart---*/
-const race = new Chart(
-    document.getElementById('race'),
+const myChart2 = new Chart(
+    document.getElementById('myChart2'),
 config2
 );
